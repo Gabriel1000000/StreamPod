@@ -7,8 +7,8 @@ import  {podcastModel} from "../model/podcasts-model"
 const pathData = path.join(__dirname, "../repository/podcasts.json");
 
 export const repositoryPodcast = async (podcastsName?:string): Promise<podcastModel[]> => {
-
-    const rawData =fs.readFileSync(pathData, "utf-8");
+    const language="utf-8";
+    const rawData =fs.readFileSync(pathData, language);
     let jsonFile = JSON.parse(rawData);
 
     if(podcastsName){
